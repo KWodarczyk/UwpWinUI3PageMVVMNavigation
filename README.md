@@ -38,6 +38,11 @@ And the key difference is the  DataTemplate in UWP inherits form DependecyObject
    <views:PageOne/>
 </DataTemplate>
 ```
+
+**BTW this will also work in WinUI3 however there is a bug and the Type is not comming throug to AP Setter so once it's fixed it will also wrok in WinUI3.0**
+
+https://github.com/microsoft/microsoft-ui-xaml/issues/6171
+
 now our AP is:
 
 ```
