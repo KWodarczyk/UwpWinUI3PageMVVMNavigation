@@ -6,7 +6,7 @@ Also no validation what so ever.
 The idea here is to just give you the essence of the solution for switching between Pages whether is a menu item page or page within same menu item. I use basically the same logic everywhere.
 
 
-I was looking for solution online myself but now of them seems to match my criteria.
+I was looking for solution online myself but none of them seems to match my criteria.
 For example this one https://nicksnettravels.builttoroam.com/viewmodel-navigation/ seems like an overkill for me, and also did not like the idea of passing a Frame around.
 This one https://rachel53461.wordpress.com/2011/12/18/navigation-with-mvvm-2/ was more what I wanted but unfortunately in UWP there is no such thing as 'implicit datatemplating' where we can switch the context based on the datatype of the datatemplate and don’t even need template selector. 
 
