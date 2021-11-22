@@ -1,4 +1,4 @@
-# UWP/ WinUI 3.0 Page and View Model navigation with MVVM
+# UWP and WinUI Page and View Model navigation with MVVM
 This is my take on Page and ViewModel Navigation in UWP/Win UI 3.0 framework using MVVM. I am not using any 3rd party API just what you get out of the box in UWP.
 Before I explain how this works, bear in mind that I did not care much about the whole SOLID thing and best practices here, so no IOC, no DI that stuff you can do it our self.
 Also no validation what so ever. 
