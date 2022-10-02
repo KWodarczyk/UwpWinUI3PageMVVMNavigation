@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/TestAppUWP/obj
+/TestAppWinUI/.vs
+/TestAppWinUI/TestAppWinUI/bin
+/TestAppWinUI/TestAppWinUI/obj

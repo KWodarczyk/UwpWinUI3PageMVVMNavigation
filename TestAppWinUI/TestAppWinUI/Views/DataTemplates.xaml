@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:views="using:TestAppWinUI.Views"
+    xmlns:viewModels="using:TestAppWinUI.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate x:Key="PageOne" viewModels:ViewModelContext.Type="viewModels:PageOneViewModel">
+        <views:PageOne/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="PageTwo" viewModels:ViewModelContext.Type="viewModels:PageTwoViewModel">
+        <views:PageTwo/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="SubPageOneOne" viewModels:ViewModelContext.Type="viewModels:SubPageOneOneViewModel">
+        <views:SubPageOneOne/>
+    </DataTemplate>
+
+</ResourceDictionary>
