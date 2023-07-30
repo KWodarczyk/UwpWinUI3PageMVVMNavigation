@@ -65,6 +65,8 @@ now our AP is:
         }
     }
 ```
+
+
 as you can see the Property itself is of type 'Type' this is the trick that will allow us to make complie time checking in our XAML so if we rename or our ViewModel it will work us.
 
 And here is our custom template selector:
@@ -87,6 +89,67 @@ And here is our custom template selector:
                             Type contexType = dataTempate.GetValue(ViewModelContext.TypeProperty) as Type;
 
                             if (contexType != null && contexType == viewModeltype)
+                            {
+                                return dataTempate;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+    }
+    
+```
+
+# Work around for WinUI3
+I have not tested this, it might have minor issues but it should point to the right dirrection, i will try to provide full code solution once I have time.
+
+```
+<DataTemplate x:Key="PageOne" attachedProps:ViewModelContext.Type="PageOneViewModel"> <!-- we take the advantage of the fact taht we can use AP in datatempalte and we hardcode the type here as string -->
+   <views:PageOne/>
+</DataTemplate>
+```
+
+```
+    public class ViewModelContext : DependencyObject
+    {
+        public static readonly DependencyProperty TypeProperty =
+        DependencyProperty.RegisterAttached(
+          "ViewModelContext",
+          typeof(string), //we need string here 
+          typeof(ViewModelContext),
+          new PropertyMetadata(null)
+        );
+        public static void SetType(DependencyObject element, string value)
+        {
+            element.SetValue(TypeProperty, value);
+        }
+        public static string GetType(DependencyObject element)
+        {
+            return (string)element.GetValue(TypeProperty);
+        }
+    }
+```
+
+```
+    public class CustomTemplateSelector : DataTemplateSelector
+    {
+        protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
+        {
+            if (item != null)
+            {
+                var viewModeltype = item.GetType();
+
+                foreach (var rd in Application.Current.Resources.MergedDictionaries)
+                {
+                    foreach (var value in rd.Values)
+                    {
+                        if (value is DataTemplate dataTempate)
+                        {
+                            string contexType = dataTempate.GetValue(ViewModelContext.TypeProperty) as string;
+
+                            if (contexType != null && contexType == viewModeltype.FullName)
                             {
                                 return dataTempate;
                             }
