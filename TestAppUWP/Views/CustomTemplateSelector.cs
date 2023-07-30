@@ -1,5 +1,5 @@
 ﻿using System;
-using TestAppUWP.ViewModels;
+using TestAppUWP;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 

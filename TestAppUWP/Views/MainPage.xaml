@@ -12,7 +12,7 @@
         <Grid.Resources>
             <views:CustomTemplateSelector x:Key="VMDataTemplateSelector" />
         </Grid.Resources>
-        
+
         <NavigationView SelectedItem="{x:Bind PageOneItem}"
                         ItemInvoked="NavigationView_ItemInvoked">
             <NavigationView.MenuItems>
@@ -21,7 +21,7 @@
             </NavigationView.MenuItems>
 
             <Frame x:Name="ContentFrame" Background="Black"
-                    DataContext="{x:Bind Switcher, Mode=OneWay}"                      
+                    DataContext="{x:Bind Switcher, Mode=OneWay}"
                     Content="{Binding VmContext, Mode=OneWay}"
                     ContentTemplateSelector="{StaticResource VMDataTemplateSelector}"/>
         </NavigationView>

@@ -1,0 +1,33 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Page
+    x:Class="TestAppWinUI3.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestAppWinUI3.Views"
+    xmlns:views="using:TestAppWinUI3.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Resources>
+            <views:CustomTemplateSelector x:Key="VMDataTemplateSelector" />
+        </Grid.Resources>
+
+        <NavigationView SelectedItem="{x:Bind PageOneItem}"
+                        ItemInvoked="NavigationView_ItemInvoked">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Page One" Icon="AddFriend" x:Name="PageOneItem"/>
+                <NavigationViewItem Content="Page Two" Icon="Admin" x:Name="PageTwoItem"/>
+            </NavigationView.MenuItems>
+
+            <Frame x:Name="ContentFrame" Background="Black"
+                    DataContext="{x:Bind Switcher, Mode=OneWay}"
+                    Content="{Binding VmContext, Mode=OneWay}"
+                    ContentTemplateSelector="{StaticResource VMDataTemplateSelector}"/>
+        </NavigationView>
+    </Grid>
+</Page>

@@ -119,14 +119,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\DataContextSwitcher.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\NotifyPropertyChanged.cs" />
-    <Compile Include="ViewModels\PageOneViewModel.cs" />
-    <Compile Include="ViewModels\PageTwoViewModel.cs" />
-    <Compile Include="ViewModels\RelayCommand.cs" />
-    <Compile Include="ViewModels\SubPageOneOneViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelContext.cs" />
+    <Compile Include="ViewModelContext.cs" />
     <Compile Include="Views\CustomTemplateSelector.cs" />
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -188,7 +181,12 @@
       <Version>6.2.12</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ViewModels\ViewModels\ViewModels.csproj">
+      <Project>{774cfe88-6809-4847-95b8-15a3f20e1bb6}</Project>
+      <Name>ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
