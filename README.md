@@ -106,7 +106,7 @@ And here is our custom template selector:
 I have not tested this, it might have minor issues but it should point to the right dirrection, i will try to provide full code solution once I have time.
 
 ```
-<DataTemplate x:Key="PageOne" attachedProps:ViewModelContext.Type="PageOneViewModel"> <!-- we take the advantage of the fact taht we can use AP in datatempalte and we hardcode the type here as string -->
+<DataTemplate x:Key="PageOne" local:ViewModelContext.Type="ViewModels.PageOneViewModel"> <!-- we take the advantage of the fact taht we can use AP in datatempalte and we hardcode the type here as string -->
    <views:PageOne/>
 </DataTemplate>
 ```
